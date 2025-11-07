@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAITM | Shivam</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
+    }
+
+    .navbar img {
+      width: 70px;
+    }
+
+    .navlinks {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .navlinks a {
+      color: #00c3ff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .navlinks a:hover {
+      color: #fff;
+    }
+
+    .btn button {
+      background: #00c3ff;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn button:hover {
+      background: #008ecc;
+    }
+
+    /* Sections */
+    section {
+      padding: 100px 10%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      min-height: 90vh;
+    }
+
+    /* Home */
+    .home {
+      background: linear-gradient(135deg, #141e30, #243b55);
+      text-align: center;
+    }
+
+    .home h1 {
+      font-size: 3rem;
+      color: #00c3ff;
+      margin-bottom: 20px;
+    }
+
+    .home p {
+      font-size: 1.1rem;
+      color: #ddd;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* About */
+    .about-saitm {
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    }
+
+    .about-saitm .text {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
+
+    .about-saitm .text h2 {
+      color: #00c3ff;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    .about-saitm .text p {
+      color: #f0f0f0;
+      line-height: 1.7;
+    }
+
+    .about-saitm img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Contact */
+    .contact {
+      flex-direction: column;
+      text-align: center;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    }
+
+    .contact h2 {
+      font-size: 2.2rem;
+      color: #00c3ff;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    /* Sign In */
+    .signin {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(14deg, beige, blue);
+      color: black;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 25px;
+      border-radius: 12px;
+      color: black;
+    }
+
+    form h1 {
+      margin-bottom: 15px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    form input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+
+    form input[type="submit"] {
+      background: #141e30;
+      color: white;
+      font-weight: bold;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    form input[type="submit"]:hover {
+      background: #00c3ff;
+    }
+
+    /* Log In */
+    .login {
+      background: linear-gradient(14deg, #f3ec78, #af4261);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: black;
+    }
+
+    .login form {
+      background: rgba(255, 255, 255, 0.9);
+      color: black;
+      border-radius: 20px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 15px 25px;
+      }
+      .text h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <img src="pngimg.com_-_asteroid_PNG17-removebg-preview.png" alt="Logo">
+    <ul class="navlinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#signin">Sign In</a></li>
+      <li><a href="#login">Log In</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home -->
+  <section id="home" class="home">
+    <h1>Welcome to SAITM</h1>
+    <p>
+      Hi! I'm <strong>Shivam Shukla</strong>, a Computer Science student at 
+      <strong>St. Andrews Institute of Technology and Management (SAITM)</strong>.  
+      Scroll down to explore more about my college.
+    </p>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about-saitm">
+    <div class="text">
+      <h2>About SAITM</h2>
+      <p>
+        St. Andrews Institute of Technology and Management (SAITM), located in Gurugram, Haryana, 
+        is a leading institute offering top-quality education in engineering, management, and computer applications.  
+        It focuses on skill development, innovation, and research, with a goal to produce industry-ready professionals.  
+        The campus provides modern infrastructure, experienced faculty, and excellent placement opportunities 
+        for its students.
+      </p>
+    </div>
+    <div class="image">
+      <img src="saitm 2.jpeg" alt="SAITM Campus">
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>
+      Address: Khurrampur, Farrukh Nagar, Haily Mandi Road, Gurgaon, Delhi (NCR), 122506 <br>
+      <strong>Mobile:</strong> (+91) 8505937772 <br>
+      <strong>Email:</strong> admissions@saitm.org
+    </p>
+  </section>
+
+  <!-- Sign In -->
+  <section id="signin" class="signin">
+    <form>
+      <h1>Sign In</h1>
+      <label>First Name</label>
+      <input type="text" placeholder="e.g. Shivam">
+      <label>Last Name</label>
+      <input type="text" placeholder="e.g. Shukla">
+      <label>Email</label>
+      <input type="email" placeholder="e.g. shivam@gmail.com">
+      <label>Password</label>
+      <input type="password" placeholder="Enter password">
+      <label>Date & Time</label>
+      <input type="date">
+      <input type="time">
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+  <!-- Log In -->
+  <section id="login" class="login">
+    <form>
+      <h1>Log In</h1>
+      <label>Username</label>
+      <input type="text" placeholder="e.g. Shivam">
+      <label>Email</label>
+      <input type="email" placeholder="e.g. shivam@gmail.com">
+      <label>Password</label>
+      <input type="password" placeholder="********">
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Shivam Shukla | SAITM | All Rights Reserved
+  </footer>
+
+</body>
+</html>
